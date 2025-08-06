@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "program",
+    "script",
+]
+resolver = "2"
+
+[workspace.dependencies]
+sp1-zkvm = "5.0.8"
