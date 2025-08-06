@@ -7,3 +7,15 @@ As written in the link, Valida currently does not natively support ARM64 archite
 run valida in an x86_64 emulated environment. 
 
 ## Running the Code
+
+To be able to build and run possible host codes in an ARM64 architecture, one needs to use Docker to create a compatible container that emulates the required architecture. Related to this fact, proof generation takes >18 minutes in the host code while it takes approximately 3.1 minutes if done using CLI commands, which is likely due to differences in Docker setup, filesystem overhead, or container configuration. That is, the host code runs in a custom Docker container with additional mounted volumes and dependencies, which may introduce overhead. In contrast, the CLI commands are executed inside valida’s official minimal Docker shell, which is likely more optimized for performance. Therefore, CLI commands are used in this part of the benchmark.
+
+To build the guest, first, we need to get inside the Valida shell, which can be done by running 
+```
+docker run --platform linux/arm64 --entrypoint=/bin/bash -it --rm -v $(realpath .):/src ghcr.io/lita-xyz/llvm-valida-releases/valida-build-container:v0.10.0-arm64
+```
+in ARM64 platforms and by running
+```
+docker run --platform linux/amd64 --entrypoint=/bin/bash -it --rm -v $(realpath .):/src ghcr.io/lita-xyz/llvm-valida-releases/valida-build-container:v0.10.0-amd64
+```
+in x86_64 platforms inside `valid_a_verify/guest`. Then, we build the guest using the command `cargo +valida build --release`.
