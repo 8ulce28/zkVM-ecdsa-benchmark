@@ -5,4 +5,5 @@ the execution of the guest code. To install SP1 zkVM, please refer to the [offic
 
 ## Running the Code
 
-The program needs to be compiled to a RISC-V file using the command `cargo prove build` to be proven in any host code. During compilation, SP1 sets an environment variable in the form of `SP1_ELF_main=/path`, which points to the path of the compiled ELF (short for Executable and Linkable Format) binary. To make this path accessible to the host code, the environment variable needs to be exported to the top-level scope so that the host code can reference it while loading the ELF. Running `export SP1_ELF_main=/path` is therefore crucial.
+The program needs to be compiled to a RISC-V file using the command `cargo prove build` to be proven in any host code. During compilation, SP1 sets an environment variable in the form of `SP1_ELF_main=/path`, which points to the path of the compiled ELF (short for Executable and Linkable Format) binary. To make this path accessible to the host code, the environment variable needs to be exported to the root so that the host code can reference it while loading the ELF. Running `export SP1_ELF_main=/path` inside `program` is therefore needed. Then, running `cargo build --release` and `cargo run --release` inside `script` displays the results.
+
