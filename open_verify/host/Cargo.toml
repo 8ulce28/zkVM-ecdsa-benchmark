@@ -1,0 +1,14 @@
+[package]
+name = "host"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+openvm = { git = "https://github.com/openvm-org/openvm.git", tag = "v1.3.0", features = ["std"] }
+anyhow = "1.0"
+eyre = "0.6.12"
+bincode = "1.3"
+openvm-stark-sdk = { git = "https://github.com/openvm-org/stark-backend.git", tag = "v1.1.0", default-features = false }
+openvm-build = { git = "https://github.com/openvm-org/openvm.git", tag = "v1.2.0" }
+openvm-sdk = { git = "https://github.com/openvm-org/openvm.git", tag = "v1.2.0", default-features = false }
+openvm-transpiler = { git = "https://github.com/openvm-org/openvm.git", tag = "v1.2.0" }
