@@ -22,4 +22,4 @@ I ran all benchmarks in a MacBook Pro with Apple Silicon chip. It is worth menti
 | Valida  |       184        |       1344              |   5973657   |    589     |
 | Powdr   |      116.31      |            NA           |    11477033 |    740     |
 
-Based on the table, OpenVM offers the fastest proof generation (2.52s) and smallest proof size (~4.17 MB). SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high (184s), the resulting proof size is comparatively small (≈5.97MB).
+Based on the table, OpenVM offers the fastest proof generation (2.52s) and smallest proof size (app. 4.17 MB). SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high (184s), the resulting proof size is comparatively small (app. 5.97MB).
