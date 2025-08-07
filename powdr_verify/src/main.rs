@@ -4,11 +4,13 @@ use std::{fs, path::PathBuf};
 fn main() {
     env_logger::init();
 
+    let size = 18;
+
     // Initiating the Powdr session
     let mut session = Session::builder()
         .guest_path("./guest")
         .out_path("powdr-target")
-        .chunk_size_log2(20)  // The default value is 20 but can be changed to 18, 19
+        .chunk_size_log2(size.clone())  // The default value is 20 but can be changed to 18, 19
         .build();
 
     session.run();
@@ -16,7 +18,7 @@ fn main() {
     session.prove();
 
     // Powdr creates chunks to generate proof
-    let chunk_num = 5;
+    let chunk_num = 5 * (1 << (20 - size));
     let mut total_size = 0;
 
     // Extracting proof size
