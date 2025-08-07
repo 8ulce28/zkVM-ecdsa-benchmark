@@ -5,4 +5,5 @@ edition = "2021"
 
 [dependencies]
 pico-sdk = { workspace = true}
-secp256k1 = { git = "https://github.com/brevis-network/rust-secp256k1.git", branch = "patch-v1.0.1", features = ["recovery", "global-context"] }
+k256 = { version = "=0.13.4", features = ["arithmetic", "ecdsa"], default-features = false}
+
