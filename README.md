@@ -7,5 +7,17 @@ Throughout this project, guest code corresponds to the part of the program that 
 
 To ensure a fair and maximally optimized benchmark, guest and host codes were tuned separately for each zkVM. To elaborate, sp1 guest code uses a custom-patched version of the k256 crate with removed unnecessary constraints. Openvm uses its own native ecdsa crate. Pico, Valida, powdr use the fastest compatible versions of k256 that work with their execution model and guest environments. Furthermore, chunk sizes and batch sizes were optimized individually for every system.
 
+Further details about the VMs are provided in the README files located in each directory.
+
 ## Benchmark Environment
-I ran all benchmarks in a MacBook Pro with Apple Silicon chip. Regarding this, it is worth mentioning that Valida does not natively support macOS. Thus, I executed Valida benchmarks inside Docker, which likely introduced non-negligible overhead. This might explain Valida’s performance gap relative to other zkVMs.
+I ran all benchmarks in a MacBook Pro with Apple Silicon chip. It is worth mentioning that Valida does not natively support macOS. Thus, I executed Valida benchmarks inside Docker, which likely introduced non-negligible overhead. This might explain Valida’s performance gap relative to other zkVMs.
+
+## Results
+
+| zkVM    | Proving Time (s) | Verification Time (s) | Proof Size | Execution Time (ms) | 
+|---------|------------------|----------------------|------------|------------|
+| SP1     |                  |                      |  |            | 
+| OpenVM  |                  |                      |  |            |
+| Pico    |                  |                      |  |            |
+| Valida  |                  |                      |  |            |
+| Powdr   |      123.92 s    |                      |  |            |
