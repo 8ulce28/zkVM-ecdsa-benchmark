@@ -11,14 +11,13 @@ proofs - regarding chunks will be located in a directory called `powdr-target`. 
 powdr performs a setup process to generate the proving and verifying keys before generation the proof for the guest program, and
 this process may take some time during the first run. However, later runs are quicker as the setup only needs to be redone iff 
 the guest crate changes. Also, powdr splits long traces into chunks that are each proven independently. The default chunk size is **2^20 (1,048,576 
-rows)**. After experimenting with the values **2^18, 2^19**, and **2^20**, I decided to set the size equal to **2^20** based on proof generation time 
-as shown in the table:
+rows)**. After experimenting with the values **2^18, 2^19**, and **2^20**, I decided to set the size equal to **2^20** based on proof generation time and proof size as shown in the table:
 
-| Chunk Size (2^n) | Proof Generation Time (s) |
-|------------------|----------------|
-| 2^18 (262144)    | 12.3           |
-| 2^19 (524288)   |  7.8            |
-| 2^20 (1,048,576) |  5.1            |
+| Chunk Size (2^n) | Proof Generation Time (s) | Proof Size (bytes) |
+|------------------|----------------|-------------|      
+| 2^18 (262144)    | 120.28 s      | 42242980 |
+| 2^19 (524288)   |  119.07 s      | 22020178 |
+| 2^20 (1048576) |  123.92         | 11477033 |
 
 
 While evaluating the performance, there occurred some issues when attempting to verify generated proofs: powdr generates one proof per chunk during 
