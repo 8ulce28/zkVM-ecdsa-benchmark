@@ -9,7 +9,8 @@ fn main() {
     let elf = include_bytes!("../../app/elf/riscv32im-pico-zkvm-elf");
     let client = DefaultProverClient::new(elf);
 
-    let mut stdin = client.new_stdin_builder();
+    let stdin = client.new_stdin_builder();
+    let new_stdin = stdin.clone();
 
     println!("Proof generation started!");
     let begin = Instant::now();
