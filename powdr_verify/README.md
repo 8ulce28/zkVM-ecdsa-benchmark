@@ -17,7 +17,7 @@ rows)**. After experimenting with the values **2^18, 2^19**, and **2^20**, I dec
 |------------------|----------------|-------------|      
 | 2^18 (262144)    | 120.28 s      | 42242980 |
 | 2^19 (524288)   |  119.07 s      | 22020178 |
-| 2^20 (1048576) |  123.92         | 11477033 |
+| 2^20 (1048576) |  120.12 s       | 11477033 |
 
 
 While evaluating the performance, there occurred some issues when attempting to verify generated proofs: powdr generates one proof per chunk during 
