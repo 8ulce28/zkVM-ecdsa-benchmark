@@ -17,9 +17,9 @@ as the table shows:
 
 | CHUNK_SIZE | CHUNK_BATCH_SIZE | Proof Generation Time (s) |
 |------------------|------------|----------------|
-| 2^18 (262,144)    | 1          | pointer being freed was not allocated         |
-| 2^18 (262,144)   | 2          | 295.5 s            |
-| 2^18 (262,144)   | 8         | >7 mins        |
+| 2^18 (262144)    | 1          | pointer being freed was not allocated         |
+| 2^18 (262144)   | 2          | 295.5 s            |
+| 2^18 (262144)   | 8         | >7 mins        |
 | 2^19 (524288) | 1          | 143.8 s            |
 | 2^19 (524288) | 2         | 165.1 s            |
 | 2^19 (524288) | 3         | 194.5 s            |
