@@ -14,10 +14,12 @@ I ran all benchmarks in a MacBook Pro with Apple Silicon chip. It is worth menti
 
 ## Results
 
-| zkVM    | Proving Time (s) | Verification Time (s) | Proof Size | Execution Time (ms) | 
-|---------|------------------|----------------------|------------|------------|
-| SP1     |                  |                      |  |            | 
-| OpenVM  |                  |                      |  |            |
-| Pico    |                  |                      |  |            |
-| Valida  |                  |                      |  |            |
-| Powdr   |      123.92 s    |                      |  |            |
+| zkVM    | Proof Generation Time (s) | Verification Time (ms) | Proof Size (bytes) | Execution Time (ms) | 
+|---------|:----------------:|:-----------------------:|:-----------:|:----------:|
+| SP1     |      11.14       |         763.12          |  9277678    |    55.12   | 
+| OpenVM  |    2.517         |           885           |   4173289   |    166     |
+| Pico    |       141.17     |     1081.19             |   16436918  |    615     |
+| Valida  |       184        |       1344              |   5973657   |    589     |
+| Powdr   |      116.31 s    |            NA           |    11477033 |    740     |
+
+Based on the table, OpenVM offers the fastest proof generation (2.52s) and smallest proof size (~4.17 MB). SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high (184s), the resulting proof size is comparatively small (≈5.97MB).
