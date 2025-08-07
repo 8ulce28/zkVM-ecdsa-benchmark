@@ -17,7 +17,7 @@ fn main() {
 
     session.prove();
 
-    // Powdr creates chunks to generate proof
+    // Powdr creates chunks in powdr-target to generate proof
     let chunk_num = 5 * (1 << (20 - size));
     let mut total_size = 0;
 
