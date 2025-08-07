@@ -5,8 +5,9 @@ and verification time (inside `host`), and a helper file (inside` measure`) that
 [official OpenVM tutorial](https://book.openvm.dev/getting-started/install.html).
 
 ## Running the Code
+The CLI is used in this part of benchmarking because the host code failed due to a parse error during guest-to-VM executable compilation. The error occurs despite the code matching the structure of the official examples, and the GitHub reference. This might be due to insufficient/outdated documentation. The designed host code rests in `host` for further checks.
 
-For benchmarking, all the following codes are run inside `guest` directory.
+All the following codes are run inside `guest` directory.
 
 To build the guest, please use `cargo openvm build`. After building, 
 ```
@@ -21,4 +22,4 @@ time cargo openvm prove app --exe target/openvm/release/guest.vmexe
 ```
 time cargo openvm verify app --proof guest.app.proof
 ```
-commands can be used. Running `measure` displays the proof size, finally.
+commands can be used. Running `measure` displays the proof size as the final step.
