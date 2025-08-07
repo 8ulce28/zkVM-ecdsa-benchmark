@@ -4,7 +4,7 @@ use std::{fs, path::PathBuf};
 fn main() {
     env_logger::init();
 
-    let size = 18;
+    let size: u32 = 18;
 
     // Initiating the Powdr session
     let mut session = Session::builder()
