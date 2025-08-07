@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use openvm::io::reveal_u32;
+// use openvm::io::reveal_u32;
 use ecdsa_core::{signature::{hazmat::PrehashVerifier}, RecoveryId, Signature};
 use openvm_ecc_guest::ecdsa::VerifyingKey;
 use openvm_k256::{Secp256k1, Secp256k1Point};
@@ -31,5 +31,5 @@ fn main() {
     // let recovered_bytes = recovered_vk.to_sec1_bytes(false);  // Introducing additional check
     // assert_eq!(recovered_bytes, expected_bytes);  // where expected_bytes are the bytes of the known public key
 
-    reveal_u32(if verified { 1 } else { 0 }, 0);
+    // reveal_u32(if verified { 1 } else { 0 }, 0);  // For feedback
 }
