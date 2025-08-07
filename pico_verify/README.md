@@ -8,7 +8,7 @@ the guest code. For installing Pico, please refer to the [official Pico tutorial
 As the first step, the guest code needs to be compiled to an ELF file similarly to other VMs. Therefore, we run `cargo pico build` in `app` directory.
 Then, we build the `prover` by running `cargo build --release`. Finally, to display the results,
 ```
-CHUNK_SIZE=262144 CHUNK_BATCH_SIZE=2 cargo run --release
+CHUNK_SIZE=524288 CHUNK_BATCH_SIZE=1 cargo run --release
 ```
 should be run where `CHUNK_SIZE` specifies the number of cycles the VM executes before dividing the computation into chunks and can be set to any 
 power of 2; and where `CHUNK_BATCH_SIZE` indicates how many chunks are processed at the same time and can be any number sufficiently small to prevent 
