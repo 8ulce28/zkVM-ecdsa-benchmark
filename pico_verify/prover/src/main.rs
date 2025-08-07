@@ -11,10 +11,6 @@ fn main() {
 
     let mut stdin = client.new_stdin_builder();
 
-    // This is dummy input. Pico insists on having input written in stdin
-    stdin.write(&1);
-    let new_stdin = stdin.clone();
-
     println!("Proof generation started!");
     let begin = Instant::now();
     let f_proof = client.prove_fast(new_stdin).expect("Failed to prove fast :(");
