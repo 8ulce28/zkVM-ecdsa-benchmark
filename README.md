@@ -13,7 +13,8 @@ Further details about the VMs are provided in the README files located in each d
 I ran all benchmarks in a MacBook Pro with Apple Silicon chip. It is worth mentioning that Valida does not natively support macOS. Thus, I executed Valida benchmarks inside Docker, which likely introduced non-negligible overhead. This might explain Valida’s performance gap relative to other zkVMs.
 
 ## Results
-
+Results regarding one verification per guest code are shown below.
+  
 | zkVM    | Proof Generation Time (s) | Verification Time (ms) | Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      11.14       |         763.12          |  9277678    |    55.12   | 
