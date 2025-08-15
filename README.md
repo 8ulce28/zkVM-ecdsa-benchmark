@@ -30,18 +30,18 @@ Results for guest codes containing 5 verifications are displayed below. (These a
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      30.80       |         922.56          |  12583546   |    253.12  | 
-| OpenVM  |    3.437         |           885           |   4173289   |    166     | -> To be checked
+| OpenVM  |    4             |           902           |   4173289   |    270     | 
 | Pico    |       !          |     !!!!!!!             |   !!!!!!!!  |    !!!     |
 | Valida  |       1181       |       3684              |   17039410  |    1683    |
-| Powdr   |      618.15      |            NA           |    46266660 |    !!!     |
+| Powdr   |      618.15      |            NA           |    46266660 |    2723.5  |
 
 Results for guest codes containing 10 verifications are displayed below. (These are not filled yet)
 
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      55.18       |         1518.49         |  19207556   |    495.34  | 
-| OpenVM  |    !             |          !              |   !         |    !       |    
-| Pico    |       !          |     !                   |   !         |    !       |
-| Valida  |       -          |       -                 |   -         |    -       |
-| Powdr   |      !           |            NA           |    !        |    !       |
+| OpenVM  |    5.16          |          891            |   4173289   |    407     |    
+| Pico    |       TBA        |     TBA                 |   TBA       |    TBA     |
+| Valida  |       TBA        |      TBA                |   TBA       |   TBA      |
+| Powdr   |      TBA         |            NA           |   TBA       |   TBA      |
 
