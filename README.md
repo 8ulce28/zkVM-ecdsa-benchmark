@@ -31,7 +31,7 @@ Results for guest codes containing 5 verifications are displayed below. (These a
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      30.80       |         922.56          |  12583546   |    253.12  | 
 | OpenVM  |    4             |           902           |   4173289   |    270     | 
-| Pico    |      TBA         |     TBA                 |   TBA       |    TBA     |
+| Pico    |      TBA         |     TBA                 |   TBA       |    TBA     | -> Runs forever
 | Valida  |       1181       |       3684              |   17039410  |    1683    |
 | Powdr   |      618.15      |            NA           |    46266660 |    2723.5  |
 
@@ -43,5 +43,7 @@ Results for guest codes containing 10 verifications are displayed below. (These 
 | OpenVM  |    5.16          |          891            |   4173289   |    407     |    
 | Pico    |       TBA        |     TBA                 |   TBA       |    TBA     |
 | Valida  |       TBA        |      TBA                |   TBA       |   TBA      |
-| Powdr   |      TBA         |            NA           |   TBA       |   TBA      |
+| Powdr   |       NA         |            NA           |    NA       |   5152     | -> Does not run to completion
+
+Powdr host code gets killed while creating program ZK setup.
 
