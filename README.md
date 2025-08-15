@@ -31,7 +31,7 @@ Results for guest codes containing 5 verifications are displayed below. (These a
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      30.80       |         922.56          |  12583546   |    253.12  | 
 | OpenVM  |    4             |           902           |   4173289   |    270     | 
-| Pico    |       !          |     !!!!!!!             |   !!!!!!!!  |    !!!     |
+| Pico    |      TBA         |     TBA                 |   TBA       |    TBA     |
 | Valida  |       1181       |       3684              |   17039410  |    1683    |
 | Powdr   |      618.15      |            NA           |    46266660 |    2723.5  |
 
