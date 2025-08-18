@@ -25,7 +25,7 @@ Results regarding one verification per guest code are displayed below.
 
 Based on the table, OpenVM offers the fastest proof generation (2.52s) and smallest proof size (app. 4.16 MB). SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high (184s), the resulting proof size is comparatively small (app. 5.97MB).
 
-Results for guest codes containing 5 verifications are displayed below.
+Results for guest codes containing 5 verifications are displayed below. Initially, I executed multiple verifications using the same signature, then I tried different signatures. Since the proving and verification times were similar in both cases, I consolidated the process into a `for` loop. 
 
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
