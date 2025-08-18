@@ -23,9 +23,9 @@ Results regarding one verification per guest code are displayed below.
 | Valida  |       184        |       1344              |   5973657   |    589     |
 | Powdr   |      116.31      |            NA           |    11477033 |    740     |
 
-Based on the table, OpenVM offers the fastest proof generation (2.52s) and smallest proof size (app. 4.17 MB). SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high (184s), the resulting proof size is comparatively small (app. 5.97MB).
+Based on the table, OpenVM offers the fastest proof generation (2.52s) and smallest proof size (app. 4.16 MB). SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high (184s), the resulting proof size is comparatively small (app. 5.97MB).
 
-Results for guest codes containing 5 verifications are displayed below. (These are not fully filled as I am still running tests.)
+Results for guest codes containing 5 verifications are displayed below.
 
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
@@ -42,8 +42,16 @@ Results for guest codes containing 10 verifications are displayed below. (These 
 | SP1     |      55.18       |         1518.49         |  19207556   |    495.34  | 
 | OpenVM  |    5.16          |          891            |   4173289   |    407     |    
 | Pico    |       1376       |     NA                  |   NA        |    NA      |
-| Valida  |       TBA        |      TBA                |   TBA       |   5602     |
+| Valida  |       > 4020     |      NA                 |   NA        |   5602     |
 | Powdr   |       NA         |            NA           |    NA       |   5152     | -> Does not run to completion
 
 Powdr host code gets killed while creating program ZK setup. Also, the process of getting the proving key does not run to completion for Pico. 
+
+Results for guest codes containing 100 verifications are displayed below.
+
+| zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
+|---------|:----------------:|:-----------------------:|:-----------:|:----------:|
+| SP1     |      499.5       |         11393        |  145596163   |    5038  | 
+| OpenVM  |   24.4          |          940       |   4327753  |    3526   |    
+
 
