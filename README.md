@@ -5,7 +5,7 @@ This project benchmarks execution time of a code that verifies ECDSA signature; 
 ## Setup
 Throughout this project, guest code corresponds to the part of the program that runs inside the zkVM and gets proven, while the host code runs outside the VM to compile/access the guest, provide inputs where necessary, generate proof, and verify the proof.
 
-To ensure a fair and maximally optimized benchmark, guest and host codes were tuned separately for each zkVM. To elaborate, sp1 guest code uses a custom-patched version of the k256 crate with removed unnecessary constraints. Openvm uses its own native ecdsa crate. Pico, Valida, powdr use the fastest compatible versions of k256 that work with their execution model and guest environments. Furthermore, chunk sizes and batch sizes were optimized individually for every system.
+To ensure a fair and maximally optimized benchmark, guest and host codes were tuned separately for each zkVM. To elaborate, sp1 guest code uses a custom-patched version of the k256 crate with removed unnecessary constraints. Openvm, which has a Weierstrass chip implementation, uses its own native ecdsa crate. Pico, Valida, powdr use the fastest compatible versions of k256 that work with their execution model and guest environments. Furthermore, chunk sizes and batch sizes were optimized individually for every system.
 
 Further details about the VMs are provided in the README files located in each directory.
 
@@ -31,7 +31,7 @@ Results for guest codes containing 5 verifications are displayed below. (These a
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      30.80       |         922.56          |  12583546   |    253.12  | 
 | OpenVM  |    4             |           902           |   4173289   |    270     | 
-| Pico    |      TBA         |     TBA                 |   TBA       |    TBA     | -> Runs forever
+| Pico    |      703.22      |     4641                |   73901814  |    624     |
 | Valida  |       1181       |       3684              |   17039410  |    1683    |
 | Powdr   |      618.15      |            NA           |    46266660 |    2723.5  |
 
@@ -41,9 +41,9 @@ Results for guest codes containing 10 verifications are displayed below. (These 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      55.18       |         1518.49         |  19207556   |    495.34  | 
 | OpenVM  |    5.16          |          891            |   4173289   |    407     |    
-| Pico    |       TBA        |     TBA                 |   TBA       |    TBA     |
-| Valida  |       TBA        |      TBA                |   TBA       |   TBA      |
+| Pico    |       1376       |     NA                  |   NA        |    NA      |
+| Valida  |       TBA        |      TBA                |   TBA       |   5602     |
 | Powdr   |       NA         |            NA           |    NA       |   5152     | -> Does not run to completion
 
-Powdr host code gets killed while creating program ZK setup.
+Powdr host code gets killed while creating program ZK setup. Also, the process of getting the proving key does not run to completion for Pico. 
 
