@@ -42,7 +42,7 @@ Results for guest codes containing 10 verifications are displayed below. (These 
 | SP1     |      55.18       |         1518.49         |  19207556   |    495.34  | 
 | OpenVM  |    5.16          |          891            |   4173289   |    407     |    
 | Pico    |       1376       |     NA                  |   NA        |    NA      |
-| Valida  |       > 4020     |      NA                 |   NA        |   5602     |
+| Valida  |       3316       |      12395              |   56992939  |   5602     |
 | Powdr   |       NA         |            NA           |    NA       |   5152     | -> Does not run to completion
 
 Powdr host code gets killed while creating program ZK setup. Also, the process of getting the proving key does not run to completion for Pico. 
