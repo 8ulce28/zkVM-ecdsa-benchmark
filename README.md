@@ -10,11 +10,14 @@ To ensure a fair and maximally optimized benchmark, guest and host codes were tu
 Further details about the VMs are provided in the README files located in each directory.
 
 ## Benchmark Environment
-I ran all benchmarks in a MacBook Pro with Apple Silicon chip. It is worth mentioning that Valida does not natively support macOS. Thus, I executed Valida benchmarks inside Docker, which likely introduced non-negligible overhead. This might explain Valida’s performance gap relative to other zkVMs.
+Initially, I ran a part of benchmarks in a MacBook Pro with Apple Silicon chip. It is worth mentioning that Valida does not natively support macOS. Thus, I executed Valida benchmarks inside Docker, which likely introduced non-negligible overhead. This might explain Valida’s performance gap relative to other zkVMs.
+
+Then, I ran the remaining benchmarks in an Amazon Linux 2023 instance. As it had `glibc-2.36` instead of `glibc-2.39`, which is a requirement for installing Valida without Docker, a similar issue arose.
 
 ## Results
 Results regarding one verification per guest code are displayed below.
-  
+
+### On Mac
 | zkVM    | Proof Generation Time (s) | Verification Time (ms) | Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      11.14       |         763.12          |  9277678    |    55.12   | 
@@ -23,10 +26,21 @@ Results regarding one verification per guest code are displayed below.
 | Valida  |       184        |       1344              |   5973657   |    589     |
 | Powdr   |      116.31      |            NA           |    11477033 |    740     |
 
+### On Amazon Linux
+| zkVM    | Proof Generation Time (s) | Verification Time (ms) | Proof Size (bytes) | Execution Time (ms) | 
+|---------|:----------------:|:-----------------------:|:-----------:|:----------:|
+| SP1     |      11.14       |         763.12          |  9277678    |    55.12   | 
+| OpenVM  |    2.517         |           885           |   4173289   |    166     |
+| Pico    |       141.17     |     1081.19             |   16436918  |    615     |
+| Valida  |       184        |       1344              |   5973657   |    589     |
+| Powdr   |      116.31      |            NA           |    11477033 |    740     |
+
+
 Based on the table, OpenVM offers the fastest proof generation (2.52s) and smallest proof size (app. 4.16 MB). SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high (184s), the resulting proof size is comparatively small (app. 5.97MB).
 
 Results for guest codes containing 5 verifications are displayed below. Initially, I executed multiple verifications using the same signature, then I tried different signatures. Since the proving and verification times were similar in both cases, I consolidated the process into a `for` loop. 
 
+### On Mac
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      30.80       |         922.56          |  12583546   |    253.12  | 
@@ -35,8 +49,27 @@ Results for guest codes containing 5 verifications are displayed below. Initiall
 | Valida  |       1181       |       3684              |   17039410  |    1683    |
 | Powdr   |      618.15      |            NA           |    46266660 |    2723.5  |
 
-Results for guest codes containing 10 verifications are displayed below. (These are not filled yet)
+### On Amazon Linux
+| zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
+|---------|:----------------:|:-----------------------:|:-----------:|:----------:|
+| SP1     |      30.80       |         922.56          |  12583546   |    253.12  | 
+| OpenVM  |    4             |           902           |   4173289   |    270     | 
+| Pico    |      703.22      |     4641                |   73901814  |    624     |
+| Valida  |       1181       |       3684              |   17039410  |    1683    |
+| Powdr   |      618.15      |            NA           |    46266660 |    2723.5  |
 
+Results for guest codes containing 10 verifications are displayed below.
+
+### On Mac
+| zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
+|---------|:----------------:|:-----------------------:|:-----------:|:----------:|
+| SP1     |      55.18       |         1518.49         |  19207556   |    495.34  | 
+| OpenVM  |    5.16          |          891            |   4173289   |    407     |    
+| Pico    |       1376       |     NA                  |   NA        |    NA      |
+| Valida  |       3316       |      12395              |   56992939  |   5602     |
+| Powdr   |       NA         |            NA           |    NA       |   5152     | -> Does not run to completion
+
+### On Amazon Linux
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      55.18       |         1518.49         |  19207556   |    495.34  | 
