@@ -15,6 +15,7 @@ Initially, I ran a part of benchmarks in a MacBook Pro with Apple Silicon chip. 
 Then, I ran the remaining benchmarks in an Amazon Linux 2023 instance. As it had `glibc-2.36` instead of `glibc-2.39`, which is a requirement for installing Valida without Docker, a similar issue arose.
 
 ## Results
+(I am still trying to find ways to optimize codes based on the tests for linux, they will be added soon.)
 Results regarding one verification per guest code are displayed below.
 
 ### On Mac
@@ -29,11 +30,11 @@ Results regarding one verification per guest code are displayed below.
 ### On Amazon Linux
 | zkVM    | Proof Generation Time (s) | Verification Time (ms) | Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
-| SP1     |      11.14       |         763.12          |  9277678    |    55.12   | 
-| OpenVM  |    2.517         |           885           |   4173289   |    166     |
-| Pico    |       141.17     |     1081.19             |   16436918  |    615     |
-| Valida  |       184        |       1344              |   5973657   |    589     |
-| Powdr   |      116.31      |            NA           |    11477033 |    740     |
+| SP1     |      11.87       |         1387            |  9277678    |    106     | +
+| OpenVM  |    5.64          |           1537          |   4173289   |    907     | check
+| Pico    |       207        |     -                   |   -         |    -       | check
+| Valida  |       TBA        |       TBA               |   TBA       |    TBA     | 
+| Powdr   |      88.79       |            NA           |    11477033 |    1815    | +
 
 
 Based on the table, OpenVM offers the fastest proof generation (2.52s) and smallest proof size (app. 4.16 MB). SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high (184s), the resulting proof size is comparatively small (app. 5.97MB).
@@ -50,13 +51,14 @@ Results for guest codes containing 5 verifications are displayed below. Initiall
 | Powdr   |      618.15      |            NA           |    46266660 |    2723.5  |
 
 ### On Amazon Linux
+(To be added)
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
-| SP1     |      30.80       |         922.56          |  12583546   |    253.12  | 
-| OpenVM  |    4             |           902           |   4173289   |    270     | 
-| Pico    |      703.22      |     4641                |   73901814  |    624     |
-| Valida  |       1181       |       3684              |   17039410  |    1683    |
-| Powdr   |      618.15      |            NA           |    46266660 |    2723.5  |
+| SP1     |             |                  |     |      | 
+| OpenVM  |              |                      |      |         | 
+| Pico    |            |                    |   |        |
+| Valida  |              |                   |     |      |
+| Powdr   |          |                     |     |    |
 
 Results for guest codes containing 10 verifications are displayed below.
 
@@ -70,13 +72,14 @@ Results for guest codes containing 10 verifications are displayed below.
 | Powdr   |       NA         |            NA           |    NA       |   5152     | -> Does not run to completion
 
 ### On Amazon Linux
+(To be added)
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
-| SP1     |      55.18       |         1518.49         |  19207556   |    495.34  | 
-| OpenVM  |    5.16          |          891            |   4173289   |    407     |    
-| Pico    |       1376       |     NA                  |   NA        |    NA      |
-| Valida  |       3316       |      12395              |   56992939  |   5602     |
-| Powdr   |       NA         |            NA           |    NA       |   5152     | -> Does not run to completion
+| SP1     |            |                 |    |      | 
+| OpenVM  |              |                   |     |      |    
+| Pico    |             |                    |         |        |
+| Valida  |             |                  |    |       |
+| Powdr   |            |                |        |      | -> Does not run to completion
 
 Powdr host code gets killed while creating program ZK setup. Also, the process of getting the proving key does not run to completion for Pico. 
 
