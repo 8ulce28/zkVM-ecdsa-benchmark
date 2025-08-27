@@ -92,7 +92,7 @@ Results for guest codes containing 100 verifications are displayed below.
 | SP1     |      499.5       |         11393        |  145596163   |    5038  | 
 | OpenVM  |   24.4          |          940       |   4327753  |    3526   |    
 
-### On Mac
+### On Amazon Linux
 | zkVM    | Proof Generation Time (s) | Verification Time (ms)| Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      287.77       |         5071        |  42844786   |    10363  | 
