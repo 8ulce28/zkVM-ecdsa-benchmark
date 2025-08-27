@@ -4,14 +4,14 @@ This directory contains the guest code, inside `guest` directory, to be proven a
 For installation of powdr, please refer to the [official powdr tutorial](https://docs.powdr.org/installation_sdk.html).
 
 ## Running the Host Code
-Unlike other VMs, powdr does not require a separate compilation of the guest code. Running `cargo run -r` from the root is sufficient for 
+Unlike other VMs, powdr does not require a separate compilation of the guest code. Running `cargo run -r` on Mac and `RUSTFLAGS="-C target-cpu=native" cargo run -r` on Linux from the root is sufficient for 
 the host to prove the execution of the guest. Upon running this command, compiled pil constraints, asm, and all information - constants, commits, 
 proofs - regarding chunks will be located in a directory called `powdr-target`. We access this directory to extract the total proof size in the host.
 
 powdr performs a setup process to generate the proving and verifying keys before generation the proof for the guest program, and
 this process may take some time during the first run. However, later runs are quicker as the setup only needs to be redone iff 
 the guest crate changes. Also, powdr splits long traces into chunks that are each proven independently. The default chunk size is **2^20 (1,048,576 
-rows)**. After experimenting with the values **2^18, 2^19**, and **2^20**, I decided to set the size equal to **2^20** based on proof generation time and proof size as shown in the table:
+rows)**. After experimenting with the values **2^18, 2^19**, and **2^20**, I decided to set the size equal to **2^20** based on proof generation time and proof size on Mac as shown in the table:
 
 | Chunk Size (2^n) | Proof Generation Time (s) | Proof Size (bytes) |
 |------------------|----------------|-------------|      
