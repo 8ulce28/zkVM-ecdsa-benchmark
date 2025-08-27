@@ -16,10 +16,10 @@ time cargo openvm run --exe target/openvm/release/guest.vmexe
 is used to time the execution of the guest code. Then, we create proving and verifying keys by running `cargo openvm keygen`. To time the proof 
 generation in application level,
 ```
-time cargo openvm prove app --exe target/openvm/release/guest.vmexe
+time cargo openvm prove app
 ```
 ; and to time the verification of the proof,
 ```
-time cargo openvm verify app --proof guest.app.proof
+time cargo openvm verify app
 ```
 commands can be used. Running `measure` displays the proof size as the final step.
