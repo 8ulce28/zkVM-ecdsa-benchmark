@@ -29,11 +29,11 @@ Results regarding one verification per guest code are displayed below.
 ### On Amazon Linux
 | zkVM    | Proof Generation Time (s) | Verification Time (ms) | Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
-| SP1     |      7.87        |         1209            |  9277678    |    107     | +
-| OpenVM  |    5.58          |           1537          |   4173289   |    906     | +
-| Pico    |       207        |     -                   |   -         |    -       | check
-| Valida  |       210        |       1380              |   5973657   |    1008     | 
-| Powdr   |      65.57       |            NA           |    11477033 |    1815    | +
+| SP1     |      7.87        |         1209            |  9277678    |    107     | 
+| OpenVM  |    5.58          |           1537          |   4173289   |    906     | 
+| Pico    |       207        |     -                   |   -         |    -       | 
+| Valida  |       706        |          2563           |   5973644   |  1983      |
+| Powdr   |      65.57       |            NA           |    11477033 |    1815    | 
 
 
 Based on the table, OpenVM offers the fastest proof generation and smallest proof size. SP1 comes the second in proof generation while it provides the quickest verification. Although the proof generation time in Valida is excessively high, the resulting proof size is comparatively small (app. 5.97MB).
@@ -58,9 +58,9 @@ Results for guest codes containing 7 verifications on Amazon Linux are displayed
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |      38.03       |         1203         |   9432942  |   724   | 
 | OpenVM  |       8.43       |            1545      |   4173289  |  1271   | 
-| Pico    |            |                    |   |        |
-| Valida  |              |                   |     |      |
 | Powdr   |    468.01      |          NA         |   76132725  |  9240  |
+
+Valida and Pico's guest codes weren't able to be proven under 60 minutes.
 
 Results for guest codes containing 10 verifications are displayed below.
 
@@ -76,10 +76,9 @@ Results for guest codes containing 10 verifications are displayed below.
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
 | SP1     |    43.74        |          1493       |   11119035 |   1033   | 
 | OpenVM  |      9.7        |          154        |  4173289   |   1460   |    
-| Pico    |             |                    |         |        |
-| Valida  |             |                  |    |       |
 
 Powdr host code gets killed while creating program ZK setup. Also, the process of getting the proving key does not run to completion for Pico on Mac. 
+Also, Valida and Powdr guest codes cannot be proven under 60 minutes on Linux.
 
 Results for guest codes containing 100 verifications are displayed below.
 ### On Mac
