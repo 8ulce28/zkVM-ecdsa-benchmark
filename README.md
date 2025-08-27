@@ -29,10 +29,10 @@ Results regarding one verification per guest code are displayed below.
 ### On Amazon Linux
 | zkVM    | Proof Generation Time (s) | Verification Time (ms) | Proof Size (bytes) | Execution Time (ms) | 
 |---------|:----------------:|:-----------------------:|:-----------:|:----------:|
-| SP1     |      7.87       |         1209            |  9277678    |    107     | +
+| SP1     |      7.87        |         1209            |  9277678    |    107     | +
 | OpenVM  |    5.58          |           1537          |   4173289   |    906     | +
 | Pico    |       207        |     -                   |   -         |    -       | check
-| Valida  |       TBA        |       TBA               |   TBA       |    TBA     | 
+| Valida  |       210        |       1380              |   5973657   |    1008     | 
 | Powdr   |      65.57       |            NA           |    11477033 |    1815    | +
 
 
@@ -79,7 +79,7 @@ Results for guest codes containing 10 verifications are displayed below.
 | Pico    |             |                    |         |        |
 | Valida  |             |                  |    |       |
 
-Powdr host code gets killed while creating program ZK setup. Also, the process of getting the proving key does not run to completion for Pico. 
+Powdr host code gets killed while creating program ZK setup. Also, the process of getting the proving key does not run to completion for Pico on Mac. 
 
 Results for guest codes containing 100 verifications are displayed below.
 ### On Mac
