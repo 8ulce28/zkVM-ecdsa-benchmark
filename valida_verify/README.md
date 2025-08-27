@@ -30,4 +30,4 @@ time valida prove ./target/valida-unknown-baremetal-gnu/release/guest proof inpu
 ```
 time valida verify ./target/valida-unknown-baremetal-gnu/release/guest proof output
 ```
-commands are used. Finally, to measure the proof byte, `measure` is run.
+commands are used. Finally, to measure the proof byte, `measure` is run. On Linux, `RUSTFLAGS="-C target-cpu=native"` can be added after `time` for CPU acceleration.
