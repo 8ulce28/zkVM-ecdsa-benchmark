@@ -5,7 +5,7 @@ This project benchmarks execution time of a code that verifies ECDSA signature; 
 ## Setup
 Throughout this project, guest code corresponds to the part of the program that runs inside the zkVM and gets proven, while the host code runs outside the VM to compile/access the guest, provide inputs where necessary, generate proof, and verify the proof.
 
-To ensure a fair and maximally optimized benchmark, guest and host codes were tuned separately for each zkVM. To elaborate, sp1 guest code uses a custom-patched version of the k256 crate with removed unnecessary constraints. Openvm, which has a Weierstrass chip implementation, uses its own native ecdsa crate. Pico, Valida, powdr use the fastest compatible versions of k256 that work with their execution model and guest environments. Furthermore, chunk sizes and batch sizes were optimized individually for every system. Also, AVX256 acceleration is enabled in the Amazon Linux 2023 AWS machine.
+To ensure a fair and maximally optimized benchmark, guest and host codes were tuned separately for each zkVM. To elaborate, sp1 guest code uses a custom-patched version of the k256 crate with removed unnecessary constraints. Openvm, which has specialized scripts for operations on secp256k1 curve, uses its own native ecdsa crate. Pico, Valida, powdr use the fastest compatible versions of k256 that work with their execution model and guest environments. Furthermore, chunk sizes and batch sizes were optimized individually for every system. Also, AVX256 acceleration is enabled in the Amazon Linux 2023 AWS machine.
 
 Further details about the VMs are provided in the README files located in each directory.
 
