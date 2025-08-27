@@ -12,7 +12,9 @@ CHUNK_SIZE=524288 CHUNK_BATCH_SIZE=1 cargo run --release
 ```
 should be run where `CHUNK_SIZE` specifies the number of cycles the VM executes before dividing the computation into chunks and can be set to any 
 power of 2; and where `CHUNK_BATCH_SIZE` indicates how many chunks are processed at the same time and can be any number sufficiently small to prevent the program from running out of memory. If on Linux, we directly measure proof generation by running 
-```time RUSTFLAGS="-C target-cpu=native" CHUNK_SIZE=524288 CHUNK_BATCH_SIZE=1 cargo pico prove --fast --elf ./elf/riscv32im-pico-zkvm-elf```.
+```
+time RUSTFLAGS="-C target-cpu=native" CHUNK_SIZE=524288 CHUNK_BATCH_SIZE=1 cargo pico prove --fast --elf ./elf/riscv32im-pico-zkvm-elf
+```
 After experimenting with these two variables related to chunks for the guest code verifying 1 signature, I decided to set `CHUNK_SIZE=524288 = 2^19`, `CHUNK_BATCH_SIZE=1`
 as the table shows:
 
